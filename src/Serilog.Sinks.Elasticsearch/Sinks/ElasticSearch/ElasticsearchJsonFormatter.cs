@@ -271,7 +271,7 @@ namespace Serilog.Sinks.Elasticsearch
         /// </summary>
         protected override void WriteTimestamp(DateTimeOffset timestamp, ref string delim, TextWriter output)
         {
-            WriteJsonProperty("@timestamp", timestamp, ref delim, output);
+            WriteJsonProperty("@timestamp", timestamp.ToString("yyyy-MM-ddTHH:mm:ss.ffffffzzz"), ref delim, output);
         }
 
         /// <summary>
